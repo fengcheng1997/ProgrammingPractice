@@ -3,7 +3,7 @@
 #include <iostream>
 
 // FIXME: Try best to avoid `using namespace` in include file
-using namespace std;
+//using namespace std;
 
 template <class T> class ListNode;
 
@@ -139,7 +139,7 @@ bool Linklist<T>::removeNode(int i)               //移除，已知节点位置
     q = temp->next;
     temp->next = q->next;
     delete q;
-    cout << "移除第" << i <<"个数据后链表内的数据：" << endl;
+    std::cout << "移除第" << i <<"个数据后链表内的数据：" << std::endl;
     showData();
     return true;
 }
@@ -161,7 +161,7 @@ bool Linklist<T>::findNode(T _data)              //查找
 
     if(q == NULL) return false;
 
-    cout << "该数据在第" << i << "个，且其坐标为：" << q << endl;
+    std::cout << "该数据在第" << i << "个，且其坐标为：" << q << std::endl;
     return true;
 }
 
@@ -175,7 +175,7 @@ bool Linklist<T>::clearNode()   //清空链表
         delete q;
     }
 
-    cout << "该链表已经被清空！" << endl;
+    std::cout << "该链表已经被清空！" << std::endl;
     return true;
 }
 
@@ -188,7 +188,7 @@ bool Linklist<T>::showData()    //输出链表内所有数据
         q = q->next;
         cout << q->data << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
     return true;
 }
 
