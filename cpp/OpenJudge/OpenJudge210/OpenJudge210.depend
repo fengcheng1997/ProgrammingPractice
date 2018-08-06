@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1532254641 source:e:\code_blocks\openjudge210\main.cpp
+	<iostream>
+	<iomanip>
+
