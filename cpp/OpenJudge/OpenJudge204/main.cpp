@@ -5,6 +5,8 @@ int main()
 	int n = -1;
 	int maxLen = 0;
 	int len = 0;
+    
+    // FIXME: How to exit the loop?, better way?
 	while(n)
 	{
 		cin >> n;
@@ -22,7 +24,7 @@ int main()
 			}
 			else len = 0;
 		}
-			maxLen++;//上述maxLen比实际的少1
+			maxLen++;//上述maxLen比实际的少1 FIXME: use English comment is better
 			if(n != 0)
 			cout << maxLen << endl;
 			maxLen = 0;

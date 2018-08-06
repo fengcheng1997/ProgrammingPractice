@@ -2,8 +2,11 @@
 #define LINKLIST_H
 #include <iostream>
 
+// FIXME: Try best to avoid `using namespace` in include file
 using namespace std;
+
 template <class T> class ListNode;
+
 template <class T>
 class Linklist
 {
