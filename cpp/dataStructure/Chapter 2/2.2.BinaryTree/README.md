@@ -87,6 +87,8 @@ for(auto it = ve.begin()+1;it != ve.end(); it++)
 ```
 
 ##最终结果
+
+
 ![Aaron Swartz](https://raw.githubusercontent.com/fengcheng1997/ProgrammingPractice/master/img-storage/%247%407CC6STI9CB0%7D%403OC%7D7XP.png)
 
 ##启发：
