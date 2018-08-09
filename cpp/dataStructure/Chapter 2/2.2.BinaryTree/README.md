@@ -87,7 +87,7 @@ for(auto it = ve.begin()+1;it != ve.end(); it++)
 ```
 
 ##最终结果
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Aaron Swartz](https://raw.githubusercontent.com/fengcheng1997/ProgrammingPractice/master/img-storage/%247%407CC6STI9CB0%7D%403OC%7D7XP.png)
 
 ##启发：
 使用指针的时候要注意空指针，否则很容易出现egmentation fault的情况
