@@ -93,5 +93,6 @@ for(auto it = ve.begin()+1;it != ve.end(); it++)
 
 ##启发：
 使用指针的时候要注意空指针，否则很容易出现egmentation fault的情况
+
 vector可以代替指针数组，且安全
 
