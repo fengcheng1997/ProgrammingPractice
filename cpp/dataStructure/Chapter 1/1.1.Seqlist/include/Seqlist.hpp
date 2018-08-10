@@ -11,7 +11,7 @@ class Seqlist
 		Seqlist(int);
 		virtual ~Seqlist();
 
-		int GetLen() { return Len; }				//返回顺序表的有效长度
+		int GetLen() { return Len; }				//返回顺序表的有效长度 FIXME: use English comment is better
 		bool InsertElem(T data);					//插入数据到顺序表尾部
 		bool InsertElem(int location, T data);	//函数重载，插入数据到顺序表指定位置
 		bool DeletElem(int location);			//删除指定位置的元素

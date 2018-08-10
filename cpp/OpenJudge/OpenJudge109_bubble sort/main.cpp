@@ -8,6 +8,11 @@ int main()
 	int temp = 0;
 	int j = 0;
 
+    // FIXME: can you using file to load data, and make some test case to evalue
+    // the program
+    // FIXME: how to make the sort algorithm to be a function, therefore, it can
+    // be used by other program
+
 	for(int i = 0; i < 5; i++)
 	{
 		cin >> nums[i];

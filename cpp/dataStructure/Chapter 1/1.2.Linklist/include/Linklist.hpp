@@ -1,5 +1,6 @@
 #ifndef LINKLIST_H
 #define LINKLIST_H
+
 #include <iostream>
 
 // FIXME: Try best to avoid `using namespace` in include file
@@ -39,26 +40,29 @@ class Linklist
         ListNode<T>* head;
 };
 
+// FIXME: please idendent using 4 space (or tab with 4 space)
 template <class T>
 class ListNode
 {
-    public:
-        ListNode(){ next = NULL;}
-        ListNode(T _data, ListNode<T> *nextNode = NULL)
-        {
-            data = _data;
-            next = nextNode;
-        }
-        ~ListNode()
-        {
-            next = NULL;
-        }
-        T getData(){return data;};
-        ListNode* getNext(){return next;}
-    private:
-        ListNode* next;                               //保存下一个节点的地址
-        T data;                                       //改节点的数据
-        friend class Linklist<T>;                     //讲Linklist设置为友元
+public:
+    ListNode(){ next = NULL;}
+    ListNode(T _data, ListNode<T> *nextNode = NULL)
+    {
+        data = _data;
+        next = nextNode;
+    }
+    ~ListNode()
+    {
+        next = NULL;
+    }
+    
+    T getData(){return data;};
+    ListNode* getNext(){return next;}
+
+private:
+    ListNode* next;                               //保存下一个节点的地址
+    T data;                                       //改节点的数据
+    friend class Linklist<T>;                     //讲Linklist设置为友元
 };
 
 
@@ -193,3 +197,4 @@ bool Linklist<T>::showData()    //输出链表内所有数据
 }
 
 #endif // LINKLIST_H
+

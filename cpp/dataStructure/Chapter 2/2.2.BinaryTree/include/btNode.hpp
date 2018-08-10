@@ -8,39 +8,40 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-template <class T>class BinaryTree;
+template <class T> class BinaryTree;
 
+// FIXME: please use the following code style and format
 template <class T>
 class btNode
 {
-    private:
-        btNode<T>* lChild;
-        btNode<T>* rChild;
-        T data;
+private:
+    btNode<T>* lChild;
+    btNode<T>* rChild;
+    T data;
 
     friend class BinaryTree<T>;
 
 
-    public:
-        btNode()
-        {
-            data = 0;
-            lChild = NULL;
-            rChild = NULL;
-        }
-        btNode(T _data)
-        {
-            data = _data;
-            lChild = NULL;
-            rChild = NULL;
-        }
-        virtual ~btNode()
-        {
-        }
+public:
+    btNode()
+    {
+        data = 0;
+        lChild = NULL;
+        rChild = NULL;
+    }
+    btNode(T _data)
+    {
+        data = _data;
+        lChild = NULL;
+        rChild = NULL;
+    }
+    virtual ~btNode()
+    {
+    }
 
-        T getData() {return data;}
-        btNode* getLChild() {return lChild;}
-        btNode* getRChild() {return rChild;}
+    T getData() {return data;}
+    btNode* getLChild() {return lChild;}
+    btNode* getRChild() {return rChild;}
 };
 
 template <class T>
@@ -48,8 +49,8 @@ class BinaryTree
 {
     private:
         btNode<T>* root;
-        vector<btNode<T>*> ve;
-        btNode<T> node[10000];
+        vector<btNode<T>*> ve;      // FIXME: the name 've' can be better
+        btNode<T> node[10000];      // FIXME: using fixed '10000' is not good in source, how to avoid it?
 
     public:
         BinaryTree()
@@ -89,6 +90,8 @@ class BinaryTree
 template <class T>
 void BinaryTree<T>::createBt()
 {
+    // FIXME: create data using std::cin in class file is not good, this code
+    // can be placed in main.cpp or test program
     int n = 0;
     cout << "请输入想要用完全二叉树储存数值的数量n(10000以内):   ";
     cin >> n;
