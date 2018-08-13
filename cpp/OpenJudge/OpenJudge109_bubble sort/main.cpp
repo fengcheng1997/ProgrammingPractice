@@ -2,11 +2,11 @@
 
 using namespace std;
 
+void bubble_sort(int n, int nums[]);
+
 int main()
 {
 	int nums[5];
-	int temp = 0;
-	int j = 0;
 
     // FIXME: can you using file to load data, and make some test case to evalue
     // the program
@@ -18,7 +18,18 @@ int main()
 		cin >> nums[i];
 	}
 
-	for(int i = 0; i < 4; i++)
+    bubble_sort(5, nums);
+
+	cout << nums[4] << endl;
+
+	return 0;
+}
+
+void bubble_sort(int n, int nums[]) //make the sort algorithm to be a function, so it can be used by other program
+{
+    int j = 0, temp = 0;
+
+		for(int i = 0; i < n-1; i++)
 	{
 		j = i;
 		if(nums[j] > nums[j+1])
@@ -28,8 +39,4 @@ int main()
 				nums[j+1] = temp;
 			}
 	}
-
-	cout << nums[4] << endl;
-	
-	return 0;
 }

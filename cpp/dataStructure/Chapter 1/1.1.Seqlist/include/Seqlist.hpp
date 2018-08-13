@@ -11,29 +11,29 @@ class Seqlist
 		Seqlist(int);
 		virtual ~Seqlist();
 
-		int GetLen() { return Len; }				//返回顺序表的有效长度 FIXME: use English comment is better
-		bool InsertElem(T data);					//插入数据到顺序表尾部
-		bool InsertElem(int location, T data);	//函数重载，插入数据到顺序表指定位置
-		bool DeletElem(int location);			//删除指定位置的元素
-		bool DeletElem(T& data);					//删除指定元素(顺序表中第一个元素被删元素）,函数重载,注意不能写(T data)，因为T=int时编译过程会混淆
-		T GetElem(int location);					//返回指定位置的元素
-		int LocatElem(T data);						//返回指定元素的位置
-		void allElem();								//遍历顺序表
-		bool ChangeElem(int location, T newData);	//替换指定位置的元素
+		int GetLen() { return Len; }
+		bool InsertElem(T data);
+		bool InsertElem(int location, T data);
+		bool DeletElem(int location);
+		bool DeletElem(T& data);
+		T GetElem(int location);
+		int LocatElem(T data);
+		void allElem();
+		bool ChangeElem(int location, T newData);
 
 	private:
-		T *elem;		//顺序表的首地址
-		int maxLen;	//顺序表的最大长度
-		int Len;			//顺序表的有效长度
+		T *elem;
+		int maxLen;
+		int Len;
 };
 
 
 template <class T>
 Seqlist<T>::Seqlist(int defaultLen)
 {
-	maxLen = defaultLen;		//记录最大长度
-	Len = 0;						//初始有效长度为0
-	elem = new T[maxLen];	//创建长度为maxLen的顺序表
+	maxLen = defaultLen;
+	Len = 0;
+	elem = new T[maxLen];
 
 	for(int i = 0; i < maxLen; i++){
 		elem[i] = 0;
@@ -43,13 +43,13 @@ Seqlist<T>::Seqlist(int defaultLen)
 template <class T>
 Seqlist<T>::~Seqlist()
 {
-	delete [] elem;		//释放T[maxLen]的内存；
+	delete [] elem;
 }
 
 template <class T>
-bool Seqlist<T>::InsertElem(T data)	//插入数据到顺序表尾部
+bool Seqlist<T>::InsertElem(T data)
 {
-	if(Len < maxLen){	//elem的最大下标为(maxLen - 1)
+	if(Len < maxLen){
 		elem[Len] = data;
 		Len++;
 		return true;
@@ -58,7 +58,7 @@ bool Seqlist<T>::InsertElem(T data)	//插入数据到顺序表尾部
 }
 
 template <class T>
-bool Seqlist<T>::InsertElem(int location, T data)	//函数重载，插入数据到顺序表指定位置
+bool Seqlist<T>::InsertElem(int location, T data)
 {
 	if(Len < maxLen-1){
 		for(int i = Len; i > location; i--)
@@ -75,7 +75,7 @@ bool Seqlist<T>::InsertElem(int location, T data)	//函数重载，插入数据到顺序表指
 }
 
 template <class T>
-bool Seqlist<T>::DeletElem(int location)		//删除指定位置的元素
+bool Seqlist<T>::DeletElem(int location)
 {
 	if(location < 0 || location > Len-1)
 		return false;
@@ -89,7 +89,7 @@ bool Seqlist<T>::DeletElem(int location)		//删除指定位置的元素
 }
 
 template <class T>
-bool Seqlist<T>::DeletElem(T& data)		//删除指定元素(顺序表中第一个元素被删元素）,函数重载,注意不能写(T data)，因为T=int时编译过程会混淆
+bool Seqlist<T>::DeletElem(T& data)
 {
 	int index = -1;
 	for(int i = 0; i < Len; i++){
@@ -111,10 +111,10 @@ bool Seqlist<T>::DeletElem(T& data)		//删除指定元素(顺序表中第一个元素被删元素）
 }
 
 template <class T>
-T Seqlist<T>::GetElem(int location)		//返回指定位置的元素
+T Seqlist<T>::GetElem(int location)
 {
 	if(location < 0 || location > Len-1){
-		cout << "参数无效" << endl;
+		cout << "Invalid parameter" << endl;
 		return 0;
 	}
 

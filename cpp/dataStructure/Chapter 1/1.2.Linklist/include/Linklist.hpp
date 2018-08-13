@@ -11,33 +11,33 @@ template <class T> class ListNode;
 template <class T>
 class Linklist
 {
-    public:
-        Linklist()
-        {
-            head = new ListNode<T>();
-        }
+public:
+    Linklist()
+    {
+        head = new ListNode<T>();
+    }
 
-        Linklist(ListNode<T>* node)
-        {
-            head = node;
-        }
-        ~Linklist()
-        {
-            delete head;
-        }
+    Linklist(ListNode<T>* node)
+    {
+        head = node;
+    }
+    ~Linklist()
+    {
+        delete head;
+    }
 
-        ListNode<T>* Gethead() { return head; }
+    ListNode<T>* Gethead() { return head; }
 
-        bool insertNode(int i, T newData);          //插入
-        bool insertNode(T newData);                 //插入到尾部
-        bool removeNode(ListNode<T> *q);            //移除，已知节点地址
-        bool removeNode(int i);                     //移除，已知节点位置
-        bool findNode(T _data);                     //查找
-        bool clearNode();                           //清空链表
-        bool showData();                            //显示所有的数据
+    bool insertNode(int i, T newData);          
+    bool insertNode(T newData);                
+    bool removeNode(ListNode<T> *q);           
+    bool removeNode(int i);                     
+    bool findNode(T _data);                     
+    bool clearNode();                           
+    bool showData();                            
 
-    private:
-        ListNode<T>* head;
+private:
+    ListNode<T>* head;
 };
 
 // FIXME: please idendent using 4 space (or tab with 4 space)
@@ -60,22 +60,22 @@ public:
     ListNode* getNext(){return next;}
 
 private:
-    ListNode* next;                               //保存下一个节点的地址
-    T data;                                       //改节点的数据
-    friend class Linklist<T>;                     //讲Linklist设置为友元
+    ListNode* next;                               
+    T data;                                       
+    friend class Linklist<T>;                     
 };
 
 
 
 
 template <class T>
-bool Linklist<T>::insertNode(int i, T newData)                //插入
+bool Linklist<T>::insertNode(int i, T newData)                
 {
     ListNode<T> *q = head, *s;
     int j = 1;
     for(; j < i; j++)
     {
-        q = q->next;    //移动到插入位置之前的节点
+        q = q->next;    
         if(q == NULL)
         {
             break;
@@ -90,10 +90,10 @@ bool Linklist<T>::insertNode(int i, T newData)                //插入
 }
 
 template <class T>
-bool Linklist<T>::insertNode(T newData) //插入至尾部
+bool Linklist<T>::insertNode(T newData) 
 {
     ListNode<T> *q = head,*s;
-    while(q->next != NULL)  //尾节点只想NULL
+    while(q->next != NULL)  
     {
         q = q->next;
     }
@@ -105,7 +105,7 @@ bool Linklist<T>::insertNode(T newData) //插入至尾部
 }
 
 template <class T>
-bool Linklist<T>::removeNode(ListNode<T> *q)               //移除，已知节点地址
+bool Linklist<T>::removeNode(ListNode<T> *q)               
 {
     ListNode<T> *temp = head;
     while(temp->next != q)
@@ -126,7 +126,7 @@ bool Linklist<T>::removeNode(ListNode<T> *q)               //移除，已知节�
 }
 
 template <class T>
-bool Linklist<T>::removeNode(int i)               //移除，已知节点位置
+bool Linklist<T>::removeNode(int i)               
 {
     ListNode<T> *temp = head, *q;
     for(int j = 1; j < i; j++)
@@ -143,15 +143,15 @@ bool Linklist<T>::removeNode(int i)               //移除，已知节点位置
     q = temp->next;
     temp->next = q->next;
     delete q;
-    std::cout << "移除第" << i <<"个数据后链表内的数据：" << std::endl;
+    std::cout << "after removing the data of " << i <<", show the list:" << std::endl;
     showData();
     return true;
 }
 
 template <class T>
-bool Linklist<T>::findNode(T _data)              //查找
+bool Linklist<T>::findNode(T _data)              
 {
-    ListNode<T> *q = head->next;    //头结点不存储数据，所以从第一个节点开始
+    ListNode<T> *q = head->next;   
     int i = 1;
     while(q->data != _data)
     {
@@ -165,12 +165,12 @@ bool Linklist<T>::findNode(T _data)              //查找
 
     if(q == NULL) return false;
 
-    std::cout << "该数据在第" << i << "个，且其坐标为：" << q << std::endl;
+    std::cout << "the data lies in " << i << "，and its address is" << q << std::endl;
     return true;
 }
 
 template <class T>
-bool Linklist<T>::clearNode()   //清空链表
+bool Linklist<T>::clearNode()   
 {
     ListNode<T> *q = head->next;
     if(q != NULL)
@@ -179,12 +179,12 @@ bool Linklist<T>::clearNode()   //清空链表
         delete q;
     }
 
-    std::cout << "该链表已经被清空！" << std::endl;
+    std::cout << "The linked list has been emptied." << std::endl;
     return true;
 }
 
 template <class T>
-bool Linklist<T>::showData()    //输出链表内所有数据
+bool Linklist<T>::showData()    
 {
     ListNode<T> *q = head;
     while(q->next != NULL)

@@ -13,7 +13,7 @@ int main()
 		linklist.insertNode(i+1);
 	}
 
-	cout << "链表内的数据为：" << endl;
+	cout << "show the data of Linklist:" << endl;
     linklist.showData();
 
     linklist.removeNode(1);

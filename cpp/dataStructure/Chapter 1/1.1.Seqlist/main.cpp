@@ -5,13 +5,13 @@ using namespace std;
 
 int main()
 {
-	cout << "若想要创建指定长度的顺序表，请输入长度N" << endl;
+	cout << "Please input the length N:" << endl;
 
 	int N = 0, data;
 	cin >> N;
 	Seqlist<int> seqlist(N);
 
-	cout << "请输入想要储存的N个值" << endl;
+	cout << "Please input N numbers:" << endl;
 	for(int i = 0; i < N; i++)
 	{
 		cin >> data;

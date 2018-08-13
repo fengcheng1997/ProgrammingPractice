@@ -4,36 +4,28 @@ using namespace std;
 
 int main()
 {
-    // FIXME: pleaes check the code style
-
 	for(int i = 0; i < 3; i++)
 	{
-		for(int j = 0; j  <  3 - i -1; j++)
-		{
+        for(int j = 0; j  <  3 - i -1; j++)
 			cout << " ";
-		}
+
 
 		for(int j = 0; j < 2 * i + 1; j++)
-		{
 			cout << "*";
-		}
 
 		cout << endl;
 	}
 
-		for(int i = 0; i < 2; i++)
+    for(int i = 0; i < 2; i++)
 	{
 		for(int j = 0; j  <  i + 1; j++)
-		{
 			cout << " ";
-		}
 
 		for(int j = 0; j < 3 - 2 * i; j++)
-		{
 			cout << "*";
-		}
-		
-	cout << endl;
+
+        cout << endl;
    }
+
 	return 0;
 }
