@@ -9,15 +9,15 @@ int main()
 
     BinaryTree.createBt();
 
-    cout << "先序遍历:" << endl;
+    cout << "Preorder traversal:" << endl;
     BinaryTree.preOrder(BinaryTree.getRoot());
-    cout << endl;   //写在oreOrder里面，在递归的过程中会换行很多次，所以在preOrder下写一个换行
+    cout << endl;
 
-    cout << "中序遍历:" << endl;
+    cout << "Inorder traversal:" << endl;
     BinaryTree.inOrder(BinaryTree.getRoot());
     cout << endl;
 
-    cout << "后序遍历:" << endl;
+    cout << "Postorder traversal:" << endl;
     BinaryTree.postOrder(BinaryTree.getRoot());
     cout << endl;
 
@@ -34,6 +34,9 @@ int main()
     BinaryTree.layOrder();
 
     BinaryTree.getDepth();
+
+    cout << "The structure of the binarytree:" << endl;
+    BinaryTree.display(BinaryTree.getRoot());
 
     return 0;
 }
