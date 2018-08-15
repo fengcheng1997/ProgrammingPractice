@@ -256,9 +256,11 @@ const double& d = 12.3;//指向常量的引用
 #include <iostream>
 
 using namespace std;
- void Swap1(int, int);
- void Swap2(int*, int*);
- void Swap3(int&, int&);
+
+void Swap1(int, int);
+void Swap2(int*, int*);
+void Swap3(int&, int&);
+
 int main()
 {
 	int num1 = 10, num2 = 5;
@@ -270,6 +272,7 @@ int main()
 	cout << num1 << "\t" << num2 << endl;
 	return 0;
 }
+
  void Swap1(int num1, int num2)
  {
  	int temp;
@@ -277,6 +280,7 @@ int main()
  	num1 = num2;
  	num2 = temp;
  }
+
  void Swap2(int* p1, int* p2)
  {
  	int temp;
@@ -284,6 +288,7 @@ int main()
  	*p1 = *p2;
  	*p2 = temp;
  }
+
  void Swap3(int& ref1, int& ref2)
  {
  	int temp;
@@ -337,5 +342,49 @@ int* bubble_sort(int n, int nums[])
 ```
 
  注意 
-* 数组名在参数传递中可以退化为指针，但它本身是一个地址常量而不是指针（地址变量）。int[1000]是一个常量类型，对应数组名的类型等价于int* const（注意const修饰的是指针本身而不是指向的内容，即不是const int*），是个常量，无法被赋值。
+* 数组名在参数传递中可以退化为指针，但它本身是一个地址常量而不是指针（地址变量）。int[1000]是一个常量类型，对应数组名的类型等价于`int* const`（注意const修饰的是指针本身而不是指向的内容，即不是`const int*`），是个常量，无法被赋值。
 * 把数组的首地址传给函数后，函数已经获得修改数组元素的能力，即和引用类型差不多，但是不能对数组的首地址再使用引用。
+
+```
+void Arrangement(int A[], int n, int _n)
+{
+    int B[n];
+    for(int i = 0; i < n; i++)
+    {
+        B[i] = A[i];
+    }
+
+    if(_n == 1)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            cout << A[i] << " " ;   //_n == 1时，输出所有元素
+        }
+        cout << endl;
+    }
+
+    if(_n >= 2)
+    {
+        for(int j = 0; j < _n; j++)
+        {
+            for(int i = 0; i < n; i++)
+                {
+                    A[i] = B[i];    //用B[n]储存原始数组，用其将A[n]初始化
+                }
+
+
+            int temp = A[j];
+            for(int i = j; i < _n-1; i++)
+            {
+                A[i] = A[i+1];
+            }
+            A[_n-1] = temp; //将首元素移到尾部，其他元素向前移动
+
+            Arrangement(A, n, _n-1);    //_n-1在下一个函数处
+
+        }
+    }
+}
+```
+
+上述递归题中，要进行下一次传参时，必须要把A数组初始化，因为在函数里面是可以通过首地址来修改数组元素的
