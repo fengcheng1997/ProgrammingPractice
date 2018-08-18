@@ -11,14 +11,13 @@ using std::endl;
 class Gobang
 {
 private:
+    int Board[15][15];
+    int score[2][15][15] = {0}; //score[0][15][15]:AI; score[1][15][15]:Player
+    int score_max = 0,x_max = -1, y_max = -1;
 
 public:
     Gobang();
     ~Gobang();
-
-    int Board[15][15];
-    int score[2][15][15] = {0}; //score[0][15][15]:AI; score[1][15][15]:Player
-    int score_max = 0,x_max = -1, y_max = -1;
 
     int getX(){return x_max;}
     int getY(){return y_max;}

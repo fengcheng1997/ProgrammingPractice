@@ -12,7 +12,6 @@ Gobang::Gobang()
 			Board[i][j] = 0;
 		}
 	}
-
 }
 
 Gobang::~Gobang()
@@ -31,8 +30,7 @@ void Gobang::Show()
 
 	for (int i = 0; i <  15; i++)
 	{
-
-            cout << " " << (char)(i + 'A');
+        cout << " " << (char)(i + 'A');
 
 		for (int j = 0; j <  15; j++)
 		{
@@ -386,7 +384,7 @@ void Gobang::CalculateScore(int Color)
 
                     k++;
                 }
-                */
+                */ //uncomplete program
 /***** the score of Player  ****/
 
             k = 1;
@@ -545,15 +543,10 @@ void Gobang::CalculateScore(int Color)
         x_max = x_P;
         y_max = y_p;
     }
-
-    //cout << (char)(x_AI + 65) << " " << (char)(y_AI + 65) << " " << score_AI << endl;
-    //cout << (char)(x_P + 65) << " " << (char)(y_p + 65) << " " << score_P << endl;
-    //cout << (char)(x_max + 65) << " " << (char)(y_max + 65) << endl;
 }
 
 void Gobang::AIGo(int x_max, int y_max, int Color)
 {
-	//cout << (char)(x_max +65) << (char)(y_max + 65) << endl;
     Board[x_max][y_max] = Color;
 }
 

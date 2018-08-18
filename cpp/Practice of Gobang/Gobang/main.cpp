@@ -10,15 +10,10 @@ using namespace std;
 int main()
 {
 	int IsWin = -1;
-	int Color;
+	int Color = 1;
+
 	Gobang gobang;
-
-	//cout << "First hand:-1, Back hand:1" << endl;
-	//cin >> Color;
-	Color = 1;
-
     gobang.Show();
-
     gobang.PeopleGo(Color);
 
     Color *= (-1);
@@ -35,7 +30,6 @@ int main()
 		gobang.PeopleGo(Color);
 
         IsWin = gobang.CheckWin();
-        cout << IsWin << endl;
 		if (IsWin != 0)
 		{
 		    system("clear");
@@ -52,7 +46,6 @@ int main()
         gobang.Show();
 
         IsWin = gobang.CheckWin();
-        cout << IsWin << endl;
 		if (IsWin != 0)
 		{
 		    system("clear");
