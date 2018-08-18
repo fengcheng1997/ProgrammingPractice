@@ -55,9 +55,9 @@ int main ()
    infile >> data;
    cout << data << endl;
 
-      infile >> data;
+   infile >> data;
    cout << data << endl;
-      infile >> data;
+   infile >> data;
    cout << data << endl;
 
    infile.close();

@@ -1,9 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 
-
-
-#include "include/Gobang.h"
+#include "Gobang.h"
 
 using namespace std;
 

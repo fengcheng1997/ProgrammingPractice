@@ -1,4 +1,4 @@
-#include "../include/Gobang.h"
+#include "Gobang.h"
 
 #include <iostream>
 
@@ -149,8 +149,8 @@ void Gobang::CalculateScore(int Color)
     {
         if(Board[i][j] == 0)
         {
-/***** the score of AI  ****/
-             k = 1;
+            /***** the score of AI  ****/
+            k = 1;
             while (Board[i][j + k] == Color && (j + k) < 15)    //Y direction
                 {
                     k++;
