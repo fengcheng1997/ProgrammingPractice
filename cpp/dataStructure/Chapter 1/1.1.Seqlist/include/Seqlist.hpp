@@ -1,8 +1,9 @@
 #ifndef SEQLIST_H
 #define SEQLIST_H
+
 #include <iostream>
 
-using namespace std;
+using namespace std;                        // FIXME: try to avoid using namespace in header file
 
 template <class T>
 class Seqlist
@@ -138,8 +139,9 @@ int Seqlist<T>::LocatElem(T data)			//返回指定元素的位置
 		return index;
 	}
 	else{
-		cout << "未找到指定元素" << endl;
-		return false;
+		cout << "未找到指定元素" << endl;       // FIXME: print the message in library function is not a good way, if the code has debuged, 
+                                                //          you can put the code to test program, or to the code who call this function
+		return false;                           // FIXME: return false is not a good way, '-1' is much better
 	}
 }
 

@@ -130,7 +130,7 @@ void Gobang::PeopleGo(int Color)
 void Gobang::CalculateScore(int Color)
 {
     int k = -1;
-    int x_AI = 0, y_AI = 0, x_P = 0 y_p = 0;
+    int x_AI = 0, y_AI = 0, x_P = 0, y_p = 0;
     int score_AI = 0, score_P = 0;
     int OppositeColor = (-1 * Color);
 
