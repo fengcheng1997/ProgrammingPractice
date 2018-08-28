@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/RBTree.hpp"
+#include "RBTree.hpp"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/RBT.hpp"
+#include "RBT.hpp"
 
 using namespace std;
 
