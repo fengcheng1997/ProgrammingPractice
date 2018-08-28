@@ -86,11 +86,11 @@ void MainWindow::mousePressEvent( QMouseEvent *e )  //the coordinates of view wh
             scene->addEllipse(40*x, 40*y, 35, 35, QPen(Qt::NoPen),QBrush(Qt::white));   //white chess
         }
 
-     player *= -1; //change player
-     CalculateScore(player);
-     scene->addEllipse(40*(x_max-8), 40*(y_max-8), 35, 35, QPen(Qt::NoPen),QBrush(Qt::white));
-     player *= -1; //change player
-     Win();//判断输赢
+        player *= -1; //change player
+        CalculateScore(player);
+        scene->addEllipse(40*(x_max-8), 40*(y_max-8), 35, 35, QPen(Qt::NoPen),QBrush(Qt::white));
+        player *= -1; //change player
+        Win();//判断输赢
     }
 
 }
@@ -100,17 +100,17 @@ void MainWindow::Win()
 {
     int okButton = 0;
     if((situation1() ==-1)
-        ||(situation2() ==-1)
-        || (situation3() ==-1)
-        || (situation4() ==-1))
+            ||(situation2() ==-1)
+            || (situation3() ==-1)
+            || (situation4() ==-1))
     {
         view->setBackgroundBrush(QColor(100, 100, 100));    //set the player of background
-         okButton= QMessageBox::information(this, "win", "black win!", QMessageBox::Ok); //QMessageBox::information has a return which is QMessageBox::Ok, and it assigns to okButton
+        okButton= QMessageBox::information(this, "win", "black win!", QMessageBox::Ok); //QMessageBox::information has a return which is QMessageBox::Ok, and it assigns to okButton
     }
     if((situation1() ==1)
-        ||(situation2() ==1)
-        || (situation3() ==1)
-        || (situation4() ==1))
+            ||(situation2() ==1)
+            || (situation3() ==1)
+            || (situation4() ==1))
     {
         view->setBackgroundBrush(QColor(240, 240, 240));    //set the player of background
         okButton = QMessageBox::information(this, "win", "white win!", QMessageBox::Ok);
@@ -147,25 +147,25 @@ int   MainWindow::situation1() //sidewards
             if(i>=0 && i<11 && j >=0 &&j<15)
             {
                 if(	a[i][j] == -1
-                    &&a[i+1][j] == -1
-                    &&a[i+2][j] == -1
-                    &&a[i+3][j] == -1
-                    &&a[i+4][j] == -1)
+                        &&a[i+1][j] == -1
+                        &&a[i+2][j] == -1
+                        &&a[i+3][j] == -1
+                        &&a[i+4][j] == -1)
                 {
                     return -1;
                 }
 
                 if(	a[i][j] == 1
-                    &&a[i+1][j] == 1
-                    &&a[i+2][j] == 1
-                    &&a[i+3][j] == 1
-                    &&a[i+4][j] == 1)
+                        &&a[i+1][j] == 1
+                        &&a[i+2][j] == 1
+                        &&a[i+3][j] == 1
+                        &&a[i+4][j] == 1)
                 {
                     return 1;
                 }
             }
         }
-        return 0;
+    return 0;
 }
 
 int MainWindow::situation2() //Obliquely
@@ -176,24 +176,24 @@ int MainWindow::situation2() //Obliquely
             if(i>=0 &&i<15 &&j>=0 &&j<11)
             {
                 if(	a[i][j] == -1
-                    &&a[i][j+1] == -1
-                    &&a[i][j+2] == -1
-                    &&a[i][j+3] == -1
-                    &&a[i][j+4] == -1)
+                        &&a[i][j+1] == -1
+                        &&a[i][j+2] == -1
+                        &&a[i][j+3] == -1
+                        &&a[i][j+4] == -1)
                 {
                     return -1;
                 }
                 if(	a[i][j] == 1
-                    &&a[i][j+1] == 1
-                    &&a[i][j+2] == 1
-                    &&a[i][j+3] == 1
-                    &&a[i][j+4] == 1)
+                        &&a[i][j+1] == 1
+                        &&a[i][j+2] == 1
+                        &&a[i][j+3] == 1
+                        &&a[i][j+4] == 1)
                 {
                     return 1;
                 }
             }
         }
-        return 0;
+    return 0;
 }
 
 int MainWindow::situation3() //down Obliquely
@@ -204,25 +204,25 @@ int MainWindow::situation3() //down Obliquely
             if(i>=0&& i<11&&j>=4&&j<15)
             {
                 if(	a[i][j] == -1
-                    &&a[i+1][j-1] == -1
-                    &&a[i+2][j-2] == -1
-                    &&a[i+3][j-3] == -1
-                    &&a[i+4][j-4] == -1)
+                        &&a[i+1][j-1] == -1
+                        &&a[i+2][j-2] == -1
+                        &&a[i+3][j-3] == -1
+                        &&a[i+4][j-4] == -1)
                 {
                     return -1;
                 }
                 if(	a[i][j] == 1
-                    &&a[i+1][j-1] == 1
-                    &&a[i+2][j-2] == 1
-                    &&a[i+3][j-3] == 1
-                    &&a[i+4][j-4] == 1)
+                        &&a[i+1][j-1] == 1
+                        &&a[i+2][j-2] == 1
+                        &&a[i+3][j-3] == 1
+                        &&a[i+4][j-4] == 1)
                 {
                     return 1;
                 }
             }
 
         }
-        return 0;
+    return 0;
 }
 
 int MainWindow::situation4() //up Obliquely
@@ -233,24 +233,24 @@ int MainWindow::situation4() //up Obliquely
             if(i>=0&& i<15&&j>=0&&j<11)
             {
                 if(	a[i][j] == -1
-                    &&a[i+1][j+1] == -1
-                    &&a[i+2][j+2] == -1
-                    &&a[i+3][j+3] == -1
-                    &&a[i+4][j+4] == -1)
+                        &&a[i+1][j+1] == -1
+                        &&a[i+2][j+2] == -1
+                        &&a[i+3][j+3] == -1
+                        &&a[i+4][j+4] == -1)
                 {
                     return -1;
                 }
                 if(	a[i][j] == 1
-                    &&a[i+1][j+1] == 1
-                    &&a[i+2][j+2] == 1
-                    &&a[i+3][j+3] == 1
-                    &&a[i+4][j+4] == 1)
+                        &&a[i+1][j+1] == 1
+                        &&a[i+2][j+2] == 1
+                        &&a[i+3][j+3] == 1
+                        &&a[i+4][j+4] == 1)
                 {
                     return 1;
                 }
             }
         }
-        return 0;
+    return 0;
 }
 
 void MainWindow::CalculateScore(int player)
@@ -272,274 +272,274 @@ void MainWindow::CalculateScore(int player)
 
     for(int i = 0; i < 15; i++)
         for(int j = 0; j < 15; j++)
-    {
-        if(a[i][j] == 0)
         {
-            /***** the score of AI  ****/
-            k = 1;
-            while (a[i][j + k] == player && (j + k) < 15)    //Y direction
+            if(a[i][j] == 0)
+            {
+                /***** the score of AI  ****/
+                k = 1;
+                while (a[i][j + k] == player && (j + k) < 15)    //Y direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
-            }
+                }
 
-            k = 1;
-            while (a[i][j - k] == player && (j - k) >= 0)    //the opposite of Y direction
+                k = 1;
+                while (a[i][j - k] == player && (j - k) >= 0)    //the opposite of Y direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
-                case 0: AIScore[i][j] += 0;break;
-                case 1: AIScore[i][j] += 10;break;
-                case 2: AIScore[i][j] += 100;break;
-                case 3: AIScore[i][j] += 1000;break;
-                case 4: AIScore[i][j] += 5000;break;
-
-            }
-
-            k = 1;
-            while (a[i + k][j] == player && (i + k) < 15)    //X direction
+                switch(k-1)
                 {
-                    k++;
-                }
-            switch(k-1)
-            {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j] == player && (i - k) >= 0)    //the opposite of x direction
+                k = 1;
+                while (a[i + k][j] == player && (i + k) < 15)    //X direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i + k][j + k] == player && (i + k) < 15 && (j + k) < 15)    //Right oblique underneath direction
+                k = 1;
+                while (a[i - k][j] == player && (i - k) >= 0)    //the opposite of x direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j - k] == player && (i - k) >= 0 && (j - k) >= 0)    //the opposite of Right oblique underneath direction
+                k = 1;
+                while (a[i + k][j + k] == player && (i + k) < 15 && (j + k) < 15)    //Right oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i + k][j - k] == player && (j - k) >= 0 && (i + k) < 15)    //left oblique underneath direction
+                k = 1;
+                while (a[i - k][j - k] == player && (i - k) >= 0 && (j - k) >= 0)    //the opposite of Right oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j + k] == player && (i - k) >= 0 && (j + k) < 15)    //the opposite of left oblique underneath direction
+                k = 1;
+                while (a[i + k][j - k] == player && (j - k) >= 0 && (i + k) < 15)    //left oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: AIScore[i][j] += 0;break;
                 case 1: AIScore[i][j] += 10;break;
                 case 2: AIScore[i][j] += 100;break;
                 case 3: AIScore[i][j] += 1000;break;
                 case 4: AIScore[i][j] += 5000;break;
 
-            }
+                }
 
-/***** the score of player  ****/
-
-            k = 1;
-            while (a[i][j + k] == Oppositeplayer && (j + k) < 15)    //Y direction
+                k = 1;
+                while (a[i - k][j + k] == player && (i - k) >= 0 && (j + k) < 15)    //the opposite of left oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
+                case 0: AIScore[i][j] += 0;break;
+                case 1: AIScore[i][j] += 10;break;
+                case 2: AIScore[i][j] += 100;break;
+                case 3: AIScore[i][j] += 1000;break;
+                case 4: AIScore[i][j] += 5000;break;
+
+                }
+
+                /***** the score of player  ****/
+
+                k = 1;
+                while (a[i][j + k] == Oppositeplayer && (j + k) < 15)    //Y direction
+                {
+                    k++;
+                }
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i][j - k] == Oppositeplayer && (j - k) >= 0)    //the opposite of Y direction
+                k = 1;
+                while (a[i][j - k] == Oppositeplayer && (j - k) >= 0)    //the opposite of Y direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i + k][j] == Oppositeplayer && (i + k) < 15)    //X direction
+                k = 1;
+                while (a[i + k][j] == Oppositeplayer && (i + k) < 15)    //X direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j] == Oppositeplayer && (i - k) >= 0)    //the opposite of x direction
+                k = 1;
+                while (a[i - k][j] == Oppositeplayer && (i - k) >= 0)    //the opposite of x direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i + k][j + k] == Oppositeplayer && (i + k) < 15 && (j + k) < 15)    //Right oblique underneath direction
+                k = 1;
+                while (a[i + k][j + k] == Oppositeplayer && (i + k) < 15 && (j + k) < 15)    //Right oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j - k] == Oppositeplayer && (i - k) >= 0 && (j - k) >= 0)    //the opposite of Right oblique underneath direction
+                k = 1;
+                while (a[i - k][j - k] == Oppositeplayer && (i - k) >= 0 && (j - k) >= 0)    //the opposite of Right oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i + k][j - k] == Oppositeplayer && (j - k) >= 0 && (i + k) < 15)    //left oblique underneath direction
+                k = 1;
+                while (a[i + k][j - k] == Oppositeplayer && (j - k) >= 0 && (i + k) < 15)    //left oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
-            }
+                }
 
-            k = 1;
-            while (a[i - k][j + k] == Oppositeplayer && (i - k) >= 0 && (j + k) < 15)    //the opposite of left oblique underneath direction
+                k = 1;
+                while (a[i - k][j + k] == Oppositeplayer && (i - k) >= 0 && (j + k) < 15)    //the opposite of left oblique underneath direction
                 {
                     k++;
                 }
-            switch(k-1)
-            {
+                switch(k-1)
+                {
                 case 0: playerScore[i][j] += 0;break;
                 case 1: playerScore[i][j] += 10;break;
                 case 2: playerScore[i][j] += 100;break;
                 case 3: playerScore[i][j] += 1000;break;
                 case 4: playerScore[i][j] += 5000;break;
 
+                }
             }
         }
-    }
 
     for(int i = 0; i < 15; i++)
         for(int j = 0; j < 15; j++)
-    {
-        if(AIScore[i][j] > score_AI)
         {
-            score_AI = AIScore[i][j];
-            x_AI = i;
-            y_AI = j;
+            if(AIScore[i][j] > score_AI)
+            {
+                score_AI = AIScore[i][j];
+                x_AI = i;
+                y_AI = j;
+            }
         }
-    }
 
     for(int i = 0; i < 15; i++)
         for(int j = 0; j < 15; j++)
-    {
-        if(playerScore[i][j] > score_P)
         {
-            score_P = playerScore[i][j];
-            x_P = i;
-            y_p = j;
+            if(playerScore[i][j] > score_P)
+            {
+                score_P = playerScore[i][j];
+                x_P = i;
+                y_p = j;
+            }
         }
-    }
 
     if(score_AI > score_P)
     {
@@ -554,5 +554,5 @@ void MainWindow::CalculateScore(int player)
         y_max = y_p;
     }
 
-     a[x_max][y_max] = player;
+    a[x_max][y_max] = player;
 }

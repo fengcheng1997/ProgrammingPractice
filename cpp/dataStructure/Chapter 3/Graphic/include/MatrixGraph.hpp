@@ -3,7 +3,7 @@
 
 #include <vector>
 
-using std::cin;
+using std::cin;             // FIXME: it is better to avoid 'using' in header file
 using std::cout;
 using std::endl;
 using std::vector;

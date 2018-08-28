@@ -12,7 +12,7 @@ class Gobang
 {
 private:
     int Board[15][15];
-    int score[2][15][15] = {0}; //score[0][15][15]:AI; score[1][15][15]:Player 
+    int score[2][15][15] = {{{0}}}; //score[0][15][15]:AI; score[1][15][15]:Player 
                                 // FIXME: think to use 1-D array to make the program easy to read
                                 //        The initialize is not correct in some compiler, I can not compile the code
     int score_max = 0,x_max = -1, y_max = -1;
