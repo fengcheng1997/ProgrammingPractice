@@ -4,9 +4,6 @@
 #include <iostream>
 #include <string.h>
 
-using std::cout; // FIXME: do not using using in header file
-using std::cin;
-using std::endl;
 
 class Gobang
 {

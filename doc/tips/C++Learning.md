@@ -388,3 +388,39 @@ void Arrangement(int A[], int n, int _n)
 ```
 
 上述递归题中，要进行下一次传参时，必须要把A数组初始化，因为在函数里面是可以通过首地址来修改数组元素的
+
+## 红黑树中的错误
+```
+template <class T>
+void RBTree<T>::insertNode(T _data)	//right
+template <class T>
+void RBTree<T>::insertNode(RBT tree, T _data)	//false		
+```
+第二种又将实例化的树作为参数传入函数中，实际上是形参，在函数结束后就被释放，并没有实质性地插入节点到树中
+而第一种是用的this指针（猜的），可以改变树的结构
+
+## 带返回值的递归
+返回值直接设为函数
+```
+template <class T>
+TNode<T>* RBTree<T>::findData(TNode<T> *node, T _data)
+{
+    if(node->data == _data)
+    {
+        return node;
+    }
+    else
+    {
+        if(node->lchild != nil)
+            return findData(node->lchild, _data);
+        if(node->rchild != nil)
+            return findData(node->rchild, _data);
+    }
+
+    return NULL;
+}```
+
+## 关于复杂的程序
+
+* 尽量一个函数只做一件事，并且命名好，便于检查
+* 利用好递归

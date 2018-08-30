@@ -40,6 +40,7 @@ public:
     void deleteNode(std::shared_ptr<AVLNode<T>> &node, T _data);
     void minimum(std::shared_ptr<AVLNode<T>> &node);
     void deleteFixup(std::shared_ptr<AVLNode<T>> &node);
+    void minimumFixup(std::shared_ptr<AVLNode<T>> &nodeParent, std::shared_ptr<AVLNode<T>> &node);
 
 };
 
@@ -276,18 +277,32 @@ void AVL<T>::minimum(std::shared_ptr<AVLNode<T>> &node)
     }
     else
     {
-        std::shared_ptr<AVLNode<T>> temp_son = node->rchild;
+        std::shared_ptr<AVLNode<T>> min = node->rchild;
 
-        while(temp_son->lchild != NULL)
+        while(min->lchild != NULL)
         {
-            temp = temp_son;
-            temp_son = temp_son->lchild;
+            min = min->lchild;
         }
 
-        node->data = temp_son->data;
-        temp->lchild = temp_son->rchild;
+        node->data = min->data;
+        minimumFixup(node->rchild,node->rchild->lchild);
     }
 
+}
+
+template <class T>
+void AVL<T>::minimumFixup(std::shared_ptr<AVLNode<T>> &nodeParent, std::shared_ptr<AVLNode<T>> &node)
+{
+    if(node->lchild != NULL)
+    {
+        minimumFixup(node, node->lchild);
+        deleteFixup(nodeParent);
+    }
+    else
+    {
+        nodeParent->lchild = node->rchild;
+        deleteFixup(nodeParent);
+    }
 }
 
 template <class T>
