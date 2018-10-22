@@ -1,0 +1,19 @@
+# Python
+
+## 在sublime中用anaconda编译python
+先安装package control,百度解决
+
+在build new system中
+```{
+"cmd": ["/usr/bin/python3.5", "-u", "$file"],
+"path":"/home/lsc/anaconda3",
+"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+"selector": "source.python"
+}```
+
+### 解决python3.5里面没有tk包的问题
+sudo apt-get install python3.5-tk #要加上python3.5，要不然不能安装到python3.5里
+
+
+
+
