@@ -14,6 +14,9 @@
 ### 解决python3.5里面没有tk包的问题
 sudo apt-get install python3.5-tk #要加上python3.5，要不然不能安装到python3.5里
 
+## pycharm和anaconda配置
+http://blog.roxanne.work/blog/2018/03/18/ubuntu16-04pycharmanaconda%E9%85%8D%E7%BD%AE/
+
 
 
 
