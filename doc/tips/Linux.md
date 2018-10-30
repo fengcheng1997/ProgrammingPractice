@@ -37,3 +37,11 @@ Input test command
 alias
 ```
 you can find the alias you add, and you can use it even if it starts again.
+
+Find some things
+```
+dpkg 'name' | grep -i 'describtion'
+nm 'name' | more
+```
+
+
