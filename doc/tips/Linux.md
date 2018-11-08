@@ -1,5 +1,9 @@
 # Linux Tips
 
+## oh my zsh 
+step 1: 按照网上的教程弄一下
+step 2: 将anaconda3的路径写到～/.zshrc中去
+
 ## apt
 
 ### `apt-get`: download & install software
@@ -42,6 +46,10 @@ Find some things
 ```
 dpkg 'name' | grep -i 'describtion'
 nm 'name' | more
+locate 文件名
 ```
+
+
+
 
 
